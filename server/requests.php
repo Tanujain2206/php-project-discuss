@@ -14,12 +14,13 @@ values(NULL,'$username','$email','$password','$address');
 
     $result = $user->execute();
 
-    // if ($result) {
-    //     echo "New user registered";
-    //     $_SESSION["user"] =["username"=>$username,"email"=>$email];
-    // } else {
-    //     echo "New user not registered";
-    // }
+    if ($result) {
+
+        $_SESSION["user"] = ["username" => $username, "email" => $email];
+        header("location: /discuss");
+    } else {
+        echo "New user not registered";
+    }
 
 }
 ?>
