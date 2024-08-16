@@ -19,6 +19,8 @@
    } else  if($_GET['ask']){
       include('./client/ask.php');
 
+   }else{
+      include('./client/questions.php');
    }
    ?>
 </body>
