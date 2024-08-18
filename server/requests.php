@@ -83,5 +83,14 @@ values(NULL,'$answer','$question_id','$user_id');
         echo "Answer is not submitted";
     }
 
+}else if (isset($_GET["delete"])) {
+    echo $qid= $_GET["delete"];
+     $query= $conn->prepare("delete from questions where id =$qid");
+     $result = $query->execute();
+     if($result){
+        header("location: /discuss");
+     }else {
+        echo "Question not deleted";
+     }
 }
 ?>
